@@ -1,0 +1,136 @@
+/* global */
+body {
+  background: #2b181e;
+  color: #ffffff;
+}
+.cabeca-main {
+  background-color: #f9c440;
+  border: 1px solid #f9c440;
+  color: #2b181e;
+}
+.caixa-main {
+  border: 1px solid #f9c440;
+  background-color: #1f1116;
+}
+a {
+  color: #c5b184;
+}
+a:hover {
+  transition: 0.75s;
+  color: #ce2300 !important;
+}
+
+/* navbar */
+nav {
+  background: #1f1116;
+  border-bottom: 1px solid #ffb700;
+}
+.separa-nav-min {
+  border: 1px dashed;
+  background-color: #c5b184 !important;
+  color: #2b181e !important;
+}
+.separa-nav-pri,
+.fim-nav {
+  background-color: #c5b184 !important;
+}
+.separa-nav-pri:hover,
+.fim-nav:hover,
+.separa-nav-min:hover {
+  transition: 0.75s;
+  border: 0.5px solid #1f1116 !important;
+  background-color: #ffb700 !important;
+  color: #2b181e !important;
+}
+
+/* main */
+h1 {
+  color: #c5b184;
+}
+
+/* aside */
+.img-block {
+  background-color: #3a2129;
+  border: 2px solid #ffb700;
+}
+.img-block:hover {
+  transition: 0.75s;
+  background-color: #ffb700;
+  border: 1.5px solid #3a2129;
+}
+
+/* footer */
+footer {
+  background: #1f1116;
+  border-top: 2px solid #ffb700;
+  color: #ffb700;
+}
+
+.footer-icon1b,
+.footer-icon2a,
+.footer-icon1,
+.footer-icon2 {
+  background-color: #c5b184 !important;
+}
+
+.footer-icon1b:hover,
+.footer-icon2a:hover,
+.footer-icon1:hover,
+.footer-icon2:hover {
+  transition: 0.75s;
+  border: 0.5px solid #1f1116 !important;
+  background-color: #ffb700 !important;
+}
+
+/* scrol */
+
+#scroll-body::-webkit-scrollbar {
+  border: 1px solid #f9c440;
+  background-color: #1f1116;
+  width: 16px;
+}
+
+#scroll-body::-webkit-scrollbar-thumb {
+  background-color: #f9c440;
+}
+
+#scroll-body::-webkit-scrollbar-thumb:hover {
+  background-color: #ffb700;
+  border: 1px solid #1f1116;
+}
+
+/* modal - bruto */
+.cabeca-modal-menu,
+.corpo-modal-menu,
+.pes-menu-modal {
+  background-color: #2b181e;
+}
+
+/* extras - bruto */
+
+.caixa-muda-cor {
+  background-color: #1f1116;
+  color: #ffffff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 2px solid #ffb700;
+  border-right: 2px solid #ffb700;
+  border-bottom: 2px solid #ffb700;
+}
+
+#icon-muda-cor-um:hover,
+#icon-muda-cor-dois:hover,
+#icon-muda-cor-tres:hover {
+  transition: 1s;
+  background-color: #8e7fc9;
+  border: 1px solid #ffffff;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  /* navbar */
+  .separa-nav-seg {
+    border: 0.5px solid #1f1116 !important;
+    background-color: #c5b184 !important;
+  }
+}

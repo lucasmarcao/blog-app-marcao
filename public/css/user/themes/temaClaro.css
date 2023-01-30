@@ -1,0 +1,140 @@
+/* global */
+body {
+  background: #f7f6dc;
+  color: #800000;
+}
+.cabeca-main {
+  background-color: #c74343;
+  border: 1px solid #ce2300;
+  color: #f2e1d6;
+}
+.caixa-main {
+  border: 1px solid #ddbeab;
+  background-color: #f2e1d6;
+}
+a {
+  color: #c74343;
+}
+a:hover {
+  transition: 0.75s;
+  color: #75a47b !important;
+}
+
+/* navbar */
+nav {
+  background: #f7f6dc;
+  border-bottom: 1px solid black;
+}
+.separa-nav-min {
+  border: 1px solid #c74343;
+  background-color: #ddbeab;
+  color: #800000 !important;
+}
+.separa-nav-pri,
+.fim-nav {
+  border: 1px solid #c74343;
+  background-color: #ddbeab;
+}
+.separa-nav-pri:hover,
+.fim-nav:hover,
+.separa-nav-min:hover {
+  transition: 0.75s;
+  border: 1px solid #ddbeab !important;
+  background-color: #c74343 !important;
+  color: #f7f6dc !important;
+}
+
+/* main */
+h1 {
+  color: #c74343;
+}
+
+/* aside */
+.img-block {
+  background-color: #c74343;
+  border: 1px solid #000000;
+}
+.img-block:hover {
+  transition: 0.75s;
+  background-color: #800000;
+  border: 1px solid #000000;
+}
+
+/* footer */
+footer {
+  border-top: 1px solid black;
+  color: #f2e1d6 !important;
+  background-color: #c74343;
+}
+
+.footer-icon1b,
+.footer-icon2a,
+.footer-icon1,
+.footer-icon2 {
+  border: 1px solid black;
+  background-color: #ddbeab;
+}
+
+.footer-icon1b:hover,
+.footer-icon2a:hover,
+.footer-icon1:hover,
+.footer-icon2:hover {
+  transition: 0.75s;
+  border: 1px solid #ddbeab;
+  background-color: #800000;
+}
+
+/* scrol */
+
+#scroll-body::-webkit-scrollbar {
+  border: 1px solid #ddbeab;
+  background-color: #f2e1d6;
+  width: 16px;
+}
+
+#scroll-body::-webkit-scrollbar-thumb {
+  background-color: #c74343;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+#scroll-body::-webkit-scrollbar-thumb:hover {
+  background-color: #800000;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+/* modal - bruto */
+.cabeca-modal-menu,
+.corpo-modal-menu,
+.pes-menu-modal {
+  background-color: #f2e1d6;
+}
+
+/* extras - bruto */
+
+.caixa-muda-cor {
+  background-color: #ddbeab;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 2px solid #c74343;
+  border-right: 2px solid #c74343;
+  border-bottom: 2px solid #c74343;
+}
+
+#icon-muda-cor-um:hover,
+#icon-muda-cor-dois:hover,
+#icon-muda-cor-tres:hover {
+  transition: 1s;
+  background-color: #8e7fc9;
+  border: 1px solid #ffffff;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  /* navbar */
+  .separa-nav-seg {
+    border: 1px solid #c74343;
+    background-color: #ddbeab;
+  }
+}

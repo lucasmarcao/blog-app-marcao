@@ -1,0 +1,101 @@
+<style>
+  body {
+    background-color: rgb(46, 10, 6);
+    color: aliceblue;
+  }
+
+  .card {
+    background-color: rgb(116, 104, 40);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size:
+      36px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    text-align: center;
+    font-size: 28px;
+    padding: 10px 0;
+  }
+
+  small {
+    font-size:
+      16px;
+    padding: 5px 0;
+  }
+
+  p {
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px;
+    background: linear-gradient(rgb(40, 40, 40), rgb(78, 19, 19));
+    border: 1px solid black;
+  }
+
+  .centro {
+    display: flex;
+    align-items: center;
+    justify-content:
+      center;
+  }
+
+  .editar {
+    margin: 5px;
+  }
+
+  .excluir {
+    margin: 10px 5px;
+  }
+</style>
+
+<h2> Lista de Jogadores.</h2>
+<hr />
+<a href="/admin/jogadores/add">
+  <button class="btn btn-success"> Novo Jogador</button>
+</a>
+<hr />
+<div class="row">
+  {{#each jogadores}}
+  <div class="col-12 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h4>Nome do Jogador: {{_id}} , {{nome}}</h4>
+        <small> Slug: <strong>{{slug}}</strong></small>
+        <br />
+        <h4> jogador nivel: { {{level}} }.</h4>
+        <h5> O Jogador é : {{genero}}.</h5>
+        <h5> A classe do
+          jogador é / {{classe._id}} / - / {{classe.titulo}} /
+        </h5>
+        <p>
+          Ultima mudança em :
+          {{dataClasse}}</p>
+        <p>Suas Habilidades são: <br>
+          {{habilidades}}
+        </p>
+        <hr />
+        <div class="centro">
+          <a href="/admin/jogadores/edit/{{_id}}">
+            <button class="btn btn-warning editar">Editar Jogador</button>
+          </a>
+          <form action="/admin/jogadores/excluir" method="post" class="excluir">
+            <input type="hidden" name="id" value="{{_id}}" />
+            <button class="btn btn-danger">Excluir Jogador</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card">
+    <div class="card-body">
+      Não foi Cadastrado nenhum jogador no momento.
+    </div>
+  </div>
+  {{/each}}
+</div>

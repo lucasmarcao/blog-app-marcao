@@ -1,0 +1,79 @@
+{{#each erros}}
+<div class="alert alert-danger">
+  {{texto}}
+</div>
+{{else}}
+{{/each}}
+<style>
+  label {
+    font-size: 20px;
+    font-weight: bold;
+  }
+</style>
+
+<h1>
+  Cria um USER pelo Admin
+</h1>
+<hr>
+<div class="card">
+  <div class="card-body">
+    <form action="nova" method="post" class="form-group">
+      <label for="email">
+        Email:
+      </label>
+      <input type="email" name="email" id="email" class="form-control" minlength="5" maxlength="100" required>
+      <br>
+      <label for="eAdmin">
+        É Administrador?
+      </label>
+      <select name="eAdmin" id="eAdmin" class="form-control">
+        <option value="0">Não é admin</option>
+        <option value="1">É admin</option>
+      </select>
+      <br>
+      <label for="nome">
+        Nome:
+      </label>
+      <input type="text" name="nome" id="nome" class="form-control" minlength="4" maxlength="40" required>
+      <br>
+      <label for="senha">
+        Senha:
+      </label>
+      <div class="input-group mb-2">
+        <input type="password" name="senha" id="senha" class="form-control" minlength="4" maxlength="20" required>
+        <div class="input-group-prepend" id="olho">
+          <div class="input-group-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+              <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <center>
+        <button type="submit" class="btn btn-success">
+          adicionar
+        </button>
+      </center>
+    </form>
+  </div>
+</div>
+
+<script>
+  let cont = 2;
+  let olho = document.getElementById("olho");
+  let senha = document.getElementById("senha");
+  olho.addEventListener("click", () => {
+    if (cont % 2 == 0) {
+      senha.setAttribute("type", "text");
+      cont = 3;
+    } else {
+      senha.setAttribute("type", "password");
+      cont = 2;
+    }
+  })
+</script>

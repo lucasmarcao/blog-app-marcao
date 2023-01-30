@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/index.css">
+<h2> Lista de usuario.</h2>
+<hr />
+<a href="/admin/usuario/add">
+  <button class="btn btn-success"> Novo USER</button>
+</a>
+<hr />
+<div class="row">
+  {{#each usuarios}}
+  <div class="col-12 mt-3">
+    <div class="card">
+      <div class="card-body">
+        <h4>Nome da Classe: {{nome}}</h4>
+        <small> Email: <strong>{{email}}</strong>
+          <br>
+          É adm? == {{eAdmin}}
+        </small>
+        <br />
+        <p>
+          Ultima mudança em :
+          {{verdadeData}}</p>
+        <hr />
+        <p>
+          Senha :
+          {{senha}}</p>
+        <hr />
+        <div class="centro">
+          <a href="/admin/usuario/edit/{{_id}}">
+            <button class="btn btn-warning editar">Editar Classe</button>
+          </a>
+          <form action="/admin/usuario/excluir" method="post" class="excluir">
+            <input type="hidden" name="id" value="{{_id}}" />
+            <button class="btn btn-danger">Excluir Classe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="card">
+    <div class="card-body">
+      Não foi Criada nenhum usuario momento.
+    </div>
+  </div>
+  {{/each}}
+</div>

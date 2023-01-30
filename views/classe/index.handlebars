@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, CLASSES!</h1>
+  <p class="lead">aqui vai mostrar as classes mano.</p>
+  <hr class="my-4">
+  <p>esse aqui era pra ser tipo listar do crud classes.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">clicar</a>
+</div>
+<br>
+<hr>
+<h2>
+  classes recentes:
+</h2>
+
+{{#each classes}}
+
+<div class="card mt-4">
+  <div class="card-body">
+    <center>
+      <h4>
+        {{titulo}}
+      </h4>
+    </center>
+    <hr>
+    <div>
+      <center>
+        <img src="/upload/user/{{caminho}}" style="height: 100px; width: 100px;" alt="{{caminho}}" title="{{caminho}}">
+      </center>
+      <br>
+      datas: {{verdadeData}} //
+      {{dataClasse}}
+    </div>
+    <a href="/classes/{{slug}}">
+      <button class="btn btn-success"> LEIA MAIS</button>
+    </a>
+  </div>
+</div>
+<hr>
+{{else}}
+<h4>nenhuma classe.</h4>
+{{/each}}

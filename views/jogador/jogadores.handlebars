@@ -1,0 +1,23 @@
+<h2>
+  Aqui estão todos os jogadores:
+</h2>
+<hr>
+{{#each jogadores}}
+<div class="card mt-4">
+  <div class="card-body">
+    <h4>
+      {{nome}} - genero: {{genero}}
+    </h4>
+    <div>
+      classe: {{classe.titulo}} //
+      {{dataClasse}}
+    </div>
+    <a href="/jogador/{{slug}}">
+      <button class="btn btn-success"> LEIA MAIS</button>
+    </a>
+  </div>
+</div>
+<hr>
+{{else}}
+<h4>NENHUM JOGADOR.</h4>
+{{/each}}

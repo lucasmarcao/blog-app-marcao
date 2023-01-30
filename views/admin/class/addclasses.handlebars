@@ -1,0 +1,243 @@
+<style>
+  label{
+    font-size: 25px;
+    margin: 10px 0;
+  }
+  body{
+    background-color: rgb(223, 41, 41);
+    color: aliceblue;
+  }
+  .card{
+    background-color: rgba(45, 45, 45, 0.5);
+  }
+  h2{
+    text-align: center;
+  }
+  .input-file-upload {
+  display: flex;
+  flex-direction: column;
+}
+.upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.upload-btn {
+  border: 2px dashed rgb(130, 87, 230) !important;
+  background-color: rgb(29, 29, 29) !important;
+  color: purple !important;
+  transition: 0.5s;
+}
+.upload-btn:hover {
+  border: 2px dashed rgb(59, 40, 105) !important;
+  background-color: rgb(80, 67, 67) !important;
+  color: rgb(65, 57, 65) !important;
+  transition: 0.5s;
+}
+.upload-btn input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.upload_img {
+  display: inline-block;
+  border: 3px solid rgb(130, 87, 230);
+  width: 500px;
+  height: 450px;
+  background: rgb(130, 87, 230);
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  vertical-align: middle;
+  margin-top: 20px;
+  padding: 1px;
+}
+.botaozzz{
+  color: aliceblue !important;
+}
+.centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+{{#each erros}}
+ <div class="alert alert-danger">
+   {{texto}}
+ </div>
+{{else}}
+
+{{/each}}
+<h2>
+  Adicionando uma Classe
+</h2>
+<div class="card">
+  <div class="card-body">
+    <form action="/admin/classes/nova" method="post" autocomplete="off"
+    enctype="multipart/form-data">
+    <input type="hidden" class="botaoArquivo" name="caminho" value="">
+  <label for="titulo">Nome</label><br />
+  <input
+    class="form-control"
+    type="text"
+    name="titulo"
+    id="titulo"
+    minlength="4"
+    required
+  />
+  <br />
+  <label for="slug">Slug</label><br />
+  <input
+    class="form-control"
+    type="text"
+    name="slug"
+    id="slug"
+    minlength="4"
+    required
+  />
+  <br />
+  <div class="input-file-upload">
+          <div class="upload-btn">
+            <button class="btn botaozzz">
+              Selecionar o arquivo
+            </button>
+            <input
+              type="file"
+              id="upfile"
+              name="image"
+              onchange="readURL(this); "
+              required
+            />
+          </div>
+          <div class="centro">
+          <img class="upload_img" id="file_upload" />
+          </div>
+        </div>
+  <input type="hidden" id="dataclasse" name="dataclasse">
+  <button type="submit" class="btn btn-success mt-3">SALVAR</button>
+</form>
+  </div>
+</div>
+
+<script>
+// variaveis Date :
+let data = new Date();
+let dia = data.getDate();
+let mes = Number(data.getMonth() + 1);
+let hora = data.getHours();
+let minuto = data.getMinutes();
+let ano = data.getFullYear();
+let inputdata = document.getElementById("dataclasse");
+var imprimi =
+  " " +
+  dia.toString() +
+  "/" +
+  mes.toString() +
+  "/" +
+  ano.toString() +
+  " " +
+  hora.toString() +
+  ":" +
+  minuto.toString();
+
+// isso deixa a var |imprimi| em tempo REAL.
+setInterval(() => {
+  // renova todas as var a cada 1000 milisegundos.
+  let dateforma = new Date();
+  dia = dateforma.getDate().toString();
+  mes = Number(dateforma.getMonth() + 1).toString();
+  hora = dateforma.getHours().toString();
+  minuto = dateforma.getMinutes().toString();
+  ano = dateforma.getFullYear().toString();
+
+  if(parseInt(dia)<10){
+    dia = "0"+dia
+  }
+
+  if(parseInt(mes)<10){
+    mes = "0"+mes
+  }
+
+  if(parseInt(hora)<10){
+    hora = "0"+hora
+  }
+
+  if(parseInt(minuto)<10){
+    minuto = "0"+minuto
+  }
+
+  imprimi =
+    " " +
+    dia.toString() +
+    "/" +
+    mes.toString() +
+    "/" +
+    ano.toString() +
+    " " +
+    hora.toString() +
+    ":" +
+    minuto.toString();
+
+  // renova todas as var a cada 1000 milisegundos.
+  inputdata.value = imprimi
+}, 1000);
+function readURL(input) { if (input.files && input.files[0]) { var reader =
+  new FileReader(); reader.onload = function (e) { $('#file_upload')
+  .attr('src', e.target.result); }; reader.readAsDataURL(input.files[0]); } }
+  window.onload=function(){
+  var div = document.getElementsByClassName("botaoArquivo")[0];
+  var input = document.getElementById("upfile");
+  var nome = "";
+
+    div.addEventListener("click", function () {
+      input.click();
+    });
+    input.addEventListener("change", function () {
+      if (input.files.length > 0) nome = input.files[0].name;
+      setInterval(() => {
+  dateforma = new Date();
+  dia = dateforma.getDate().toString();
+  mes = Number(dateforma.getMonth() + 1).toString();
+  ano = dateforma.getFullYear().toString();
+  hora = dateforma.getHours().toString();
+  minuto = dateforma.getMinutes().toString();
+  if (parseInt(minuto) < 10) {
+    minuto = "0" + minuto;
+  }
+
+  if (parseInt(hora) < 10) {
+    hora = "0" + hora;
+  }
+
+  if (parseInt(dia) < 10) {
+    dia = "0" + dia;
+  }
+
+  if (parseInt(mes) < 10) {
+    mes = "0" + mes;
+  }
+  imprimiData =
+    "" +
+    dia.toString() +
+    "-" +
+    mes.toString() +
+    "-" +
+    ano.toString() +
+    "-hora-" +
+    hora.toString() +
+    "-" +
+    minuto.toString();
+
+    div.value = imprimiData + "_" +nome;
+    console.log("nome do arquivo é : ",imprimiData + "_" +nome)
+    }, 1000);
+  });
+}
+</script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"
+></script>

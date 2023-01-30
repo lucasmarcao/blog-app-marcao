@@ -1,0 +1,36 @@
+.caixa-img-hentai {
+  transition: 1s;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.asidehq {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 98%;
+}
+
+.main-hq {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 98%;
+}
+.texto-ksksk {
+  text-align: center !important;
+}
+/* hq */
+.img-hentai {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 50% !important;
+  border: 1px solid #828282 !important;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  .img-hentai {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, homepage!</h1>
+  <p class="lead">aqui vai mostrar as coisas mano.</p>
+  <hr class="my-4">
+  <p>esse aqui era pra ser tipo o index.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">clicar</a>
+</div>
+<br>
+<hr>
+<h2>
+  jogadores recentes:
+</h2>
+<hr>
+{{#each jogadores}}
+<div class="card mt-4">
+  <div class="card-body">
+    <h4>
+      {{nome}} - genero: {{genero}}
+    </h4>
+    <div>
+      classe: {{classe.titulo}} //
+      {{dataClasse}}
+    </div>
+    <a href="/jogador/{{slug}}">
+      <button class="btn btn-success"> LEIA MAIS</button>
+    </a>
+  </div>
+</div>
+<hr>
+{{else}}
+<h4>NENHUM JOGADOR.</h4>
+{{/each}}

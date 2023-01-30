@@ -1,0 +1,136 @@
+<style>
+  label {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  body {
+    background-color: rgb(47, 47, 47);
+    color: aliceblue;
+  }
+
+  .card {
+    background-color: rgba(45, 45, 45, 0.5);
+  }
+
+  h2 {
+    text-align: center;
+  }
+</style>
+{{#each erros}}
+<div class="alert alert-danger">
+  {{texto}}
+</div>
+{{else}}
+
+{{/each}}
+<h2>
+  Adicionando um Jogador
+</h2>
+<div class="card">
+  <div class="card-body">
+    <form action="/admin/jogadores/edit" method="post" autocomplete="off">
+      <input type="hidden" value="{{jogadores._id}}" name="id">
+      <label for="nome">Nome</label><br />
+      <input class="form-control" type="text" name="nome" id="nome" value="{{jogadores.nome}}" minlength="3"
+        maxlength="20" required />
+      <br />
+      <label for="slug">Slug</label><br />
+      <input class="form-control" type="text" name="slug" id="slug" value="{{jogadores.slug}}" minlength="3"
+        maxlength="20" required />
+      <br />
+      <label for="level">level</label><br />
+      <input class="form-control" type="number" name="level" id="level" max="4000" maxlength="5" min="1" step="1"
+        value="{{jogadores.level}}" required />
+      <br />
+      <div class="form-group">
+        <label for="genero">Genero</label>
+        <select class="form-control" id="genero" name="genero">
+          <option value="homem">Homem</option>
+          <option value="mulher">Mulher</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <br>
+      <label for="classes">Classe</label>
+      <select class="form-control" name="classes" id="classes">
+        {{#each classes}}
+        <option value="{{_id}}">{{titulo}}</option>
+        {{else}}
+        <option value="0">Nenhuma Classe Aqui.</option>
+        {{/each}}
+      </select>
+      <br>
+      <label for="habilidades">habilidades</label><br />
+      <textarea class="form-control" name="habilidades" id="habilidades" minlength="8" maxlength="200"
+        required> {{jogadores.habilidades}}</textarea>
+      <br />
+      <input type="hidden" id="dataclasse" name="dataclasse">
+      <button type="submit" class="btn btn-success mt-3">SALVAR</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // variaveis Date :
+  let data = new Date();
+  let dia = data.getDate();
+  let mes = Number(data.getMonth() + 1);
+  let hora = data.getHours();
+  let minuto = data.getMinutes();
+  let ano = data.getFullYear();
+  let inputdata = document.getElementById("dataclasse");
+  var imprimi =
+    " " +
+    dia.toString() +
+    "/" +
+    mes.toString() +
+    "/" +
+    ano.toString() +
+    " " +
+    hora.toString() +
+    ":" +
+    minuto.toString();
+
+  // isso deixa a var |imprimi| em tempo REAL.
+  setInterval(() => {
+    // renova todas as var a cada 1000 milisegundos.
+    let dateforma = new Date();
+    dia = dateforma.getDate().toString();
+    mes = Number(dateforma.getMonth() + 1).toString();
+    hora = dateforma.getHours().toString();
+    minuto = dateforma.getMinutes().toString();
+    ano = dateforma.getFullYear().toString();
+
+    if (parseInt(dia) < 10) {
+      dia = "0" + dia
+    }
+
+    if (parseInt(mes) < 10) {
+      mes = "0" + mes
+    }
+
+    if (parseInt(hora) < 10) {
+      hora = "0" + hora
+    }
+
+    if (parseInt(minuto) < 10) {
+      minuto = "0" + minuto
+    }
+
+    imprimi =
+      " " +
+      dia.toString() +
+      "/" +
+      mes.toString() +
+      "/" +
+      ano.toString() +
+      " " +
+      hora.toString() +
+      ":" +
+      minuto.toString();
+
+    // renova todas as var a cada 1000 milisegundos.
+    inputdata.value = imprimi
+  }, 1000);
+</script>

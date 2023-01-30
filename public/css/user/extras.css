@@ -1,0 +1,93 @@
+.shake-left-right:hover {
+  animation: shake-left-right 1s linear both infinite;
+}
+@keyframes shake-left-right {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 50%;
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+}
+
+.caixa-muda-cor {
+  z-index: 2 !important;
+  position: fixed;
+  width: 25px;
+  height: 120px;
+  padding: 5px;
+  top: 250px;
+  left: 0;
+}
+
+.caixa-muda-cor:hover {
+  transition: 1s;
+  height: 260px;
+  width: 260px;
+}
+
+.icons-muda-cor {
+  width: 100%;
+  height: 100px;
+}
+
+.seta-muda-cor {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 40px;
+  width: 25px;
+  height: 100px;
+}
+
+#icon-muda-cor-um,
+#icon-muda-cor-dois,
+#icon-muda-cor-tres {
+  padding: 4px;
+  margin-top: 7px;
+  height: 40px !important;
+  width: 80px !important;
+}
+#icon-muda-cor-um {
+  background-color: #f7f6dc;
+  border: 1px solid #c74343;
+}
+#icon-muda-cor-dois {
+  background-color: #302f2d;
+  border: 1px solid #42d050;
+}
+#icon-muda-cor-tres {
+  background-color: #2b181e;
+  border: 1px solid #ffb700;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  .caixa-muda-cor {
+    width: 17px;
+  }
+
+  .seta-muda-cor {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 28px;
+    width: 17px;
+  }
+}

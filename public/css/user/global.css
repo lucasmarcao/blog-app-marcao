@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  letter-spacing: 0.6px;
+}
+
+body {
+  transition: 0.8s;
+}
+
+.centro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centro-mestre {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cabeca-main {
+  transition: 0.8s;
+  text-align: center;
+  height: auto;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.caixa-main {
+  font-family: Courier, monospace !important;
+  padding: 15px;
+  height: auto;
+  font-size: 18px;
+}
+.caixa-main::first-letter {
+  padding-left: 15px;
+  font-size: 30px;
+}
+
+a {
+  font-family: Courier, monospace !important;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+a:hover {
+  transition: 0.5s;
+}
+
+span {
+  font-family: Courier, monospace !important;
+  font-weight: bold;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  .caixa-main {
+    text-align: start;
+    font-size: 15px;
+  }
+}

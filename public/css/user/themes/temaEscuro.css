@@ -1,0 +1,140 @@
+/* global */
+body {
+  background: #111413;
+  color: #adcead;
+}
+.cabeca-main {
+  background-color: #42d050;
+  color: #111413;
+}
+.caixa-main {
+  border: 2px solid #42d050;
+  background-color: #302f2d;
+}
+a {
+  color: #42d050;
+}
+a:hover {
+  border-radius: 3px;
+  transition: 0.75s;
+  background-color: #111413;
+  color: #ce2300 !important;
+}
+
+/* navbar */
+nav {
+  background: #302f2d;
+  border-bottom: 1.2px solid #42d050;
+}
+.separa-nav-min {
+  border-radius: 0 !important;
+  border: 1px ridge;
+  background-color: #42d050 !important;
+  color: #111413 !important;
+}
+.separa-nav-pri,
+.fim-nav {
+  border-radius: 0 !important;
+  background-color: #42d050 !important;
+}
+.separa-nav-pri:hover,
+.fim-nav:hover,
+.separa-nav-min:hover {
+  transition: 0.75s;
+  border: 0.5px solid #302f2d !important;
+  background-color: #055a11 !important;
+  color: #ffffff !important;
+}
+
+/* main */
+h1 {
+  color: #42d050;
+}
+
+/* aside */
+.img-block {
+  background-color: #42d050;
+  border: 2px solid #008b2e;
+}
+.img-block:hover {
+  transition: 0.75s;
+  background-color: #008b2e;
+  border: 1.5px solid #ce2300;
+}
+
+/* footer */
+footer {
+  background: #302f2d;
+  border-top: 2px solid #42d050;
+  color: #42d050;
+}
+
+.footer-icon1b,
+.footer-icon2a,
+.footer-icon1,
+.footer-icon2 {
+  background-color: #42d050 !important;
+}
+
+.footer-icon1b:hover,
+.footer-icon2a:hover,
+.footer-icon1:hover,
+.footer-icon2:hover {
+  transition: 0.75s;
+  border: 0.5px solid #302f2d !important;
+  background-color: #055a11 !important;
+}
+
+/* scrol */
+
+#scroll-body::-webkit-scrollbar {
+  border: 1px solid #008b2e;
+  background-color: #302f2d;
+  width: 18px;
+}
+
+#scroll-body::-webkit-scrollbar-thumb {
+  border: 1px solid #302f2d;
+  background-color: #008b2e;
+  border-radius: 15px;
+}
+
+#scroll-body::-webkit-scrollbar-thumb:hover {
+  background-color: #055a11;
+  border: 1px solid #302f2d;
+}
+
+/* modal - bruto */
+.cabeca-modal-menu,
+.corpo-modal-menu,
+.pes-menu-modal {
+  background-color: #008b2e;
+}
+
+/* extras - bruto */
+
+.caixa-muda-cor {
+  background-color: #302f2d;
+  color: #ffffff;
+  border-top: 2px solid #055a11;
+  border-right: 2px solid #055a11;
+  border-bottom: 2px solid #055a11;
+}
+
+#icon-muda-cor-um:hover,
+#icon-muda-cor-dois:hover,
+#icon-muda-cor-tres:hover {
+  transition: 1s;
+  background-color: #8e7fc9;
+  border: 1px solid #ffffff;
+}
+
+/* responsivo */
+@media (max-width: 991.98px) {
+  /* navbar */
+  .separa-nav-seg {
+    border-radius: 0 !important;
+    border: 0.5px solid #302f2d !important;
+    background-color: #42d050 !important;
+  }
+}
