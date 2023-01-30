@@ -69,7 +69,6 @@ mongoose
 // ---> Public.
 app.use(express.static(path.join(__dirname, "public")));
 // midleware.
-
 // app.use((req, res, next) => {
 //   console.log("oi eu sou um midleware");
 //   next();
