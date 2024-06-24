@@ -16,6 +16,7 @@ require("./models/Jogador");
 const Jogador = mongoose.model("jogadores");
 // autenticação.
 const db = require("./config/db");
+const img = require("./config/img");
 const passport = require("passport");
 require("./config/auth")(passport);
 
@@ -55,9 +56,12 @@ mongoose
     db.MongoURI
   )
   .then(() => {
-    console.log(` SO=  ${process.platform}
-    Conectou com o Mongodb !!! 
-    URL = ${db.MongoURI}`);
+    console.log(
+      `SO=  ${process.platform}
+  Conectou com o Mongodb !!! 
+  URL = ${db.MongoURI}
+  IMG = ${img.imgURI}`
+    );
   })
   .catch((erro) => {
     console.log(db.MongoURI,
@@ -82,9 +86,10 @@ app.get("/", (req, res) => {
     .then((jogadores) => {
       res.render("index", { jogadores: jogadores });
     })
-    .catch((err) => {
-      req.flash("error_msg", "Houve um erro interno. !!!");
+    .catch((cagou) => {
+      console.log(cagou);
       res.redirect("/404");
+      req.flash("error_msg", "Houve um erro interno. !!!");
     });
 });
 
@@ -172,6 +177,7 @@ app.use("/usuario", usuario);
 const PORT = process.env.PORT || 8081;
 try {
   app.listen(PORT, () => {
+    console.log(`process.env.PORT == ${process.env.PORT} \n`);
     console.log("servidor rodando !!! para entrar, http://localhost:8081/ !!!");
   });
 } catch (error) {
