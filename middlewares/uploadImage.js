@@ -1,4 +1,6 @@
 const multer = require("multer");
+const img = require("../config/img");
+
 
 // data legal
 let dateforma = new Date();
@@ -47,7 +49,7 @@ setInterval(() => {
 module.exports = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./public/upload/user");
+      cb(null, img.imgURI);
     },
     filename: (req, file, cb) => {
       cb(null, imprimiData + "_" + file.originalname);
