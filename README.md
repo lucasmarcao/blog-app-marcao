@@ -1,12 +1,6 @@
-Abaixo está um exemplo de como você pode criar um README.md 
-para o projeto baseado nas informações do código fornecido:
-
-```markdown
 # Blog App Marcao
 
-Este é um projeto de aplicação de blog desenvolvido com **Node.js** utilizando o
-framework **Express** e __MongoDB__. A aplicação permite cadastrar e
-exibir jogadores, classes e realizar login/autenticação de usuários.
+Este é um projeto de aplicação de blog desenvolvido com **Node.js** utilizando o framework **Express** e **MongoDB**. A aplicação permite cadastrar e exibir jogadores, classes e realizar login/autenticação de usuários.
 
 ## Funcionalidades
 
@@ -29,7 +23,8 @@ exibir jogadores, classes e realizar login/autenticação de usuários.
 1. Clone o repositório:
    ```bash
    git clone https://github.com/lucasmarcao/blog-app-marcao.git
-   ```
+    ```
+  
    
 2. Acesse o diretório do projeto:
    ```bash
@@ -104,5 +99,10 @@ Distribuído sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais inf
 ```
 
 Esse README apresenta a estrutura do projeto, explica como configurá-lo, e detalha o
-uso das tecnologias. Certifique-se de personalizar o link do repositório
-e outros detalhes conforme necessário.
+uso das tecnologias. Certifique-se de personalizar o link do
+repositório e outros detalhes conforme necessário.
+
+```
+
+
+
